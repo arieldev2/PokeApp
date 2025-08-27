@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PokemonDetailView: View {
     let pokemonName: String
-    @StateObject private var viewModel = PokemonDetailViewModel()
+    @State private var viewModel = PokemonDetailViewModel()
     
     var body: some View {
         ScrollView {

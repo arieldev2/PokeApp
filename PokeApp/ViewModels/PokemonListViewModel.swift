@@ -8,11 +8,12 @@
 import SwiftUI
 
 @MainActor
-class PokemonListViewModel: ObservableObject {
-    @Published var pokemonList: [PokemonBasic] = []
-    @Published var isLoading = false
-    @Published var error: PokemonError?
-    @Published var searchText = ""
+@Observable
+final class PokemonListViewModel {
+    var pokemonList: [PokemonBasic] = []
+    var isLoading = false
+    var error: PokemonError?
+    var searchText = ""
     
     private let pokemonService: PokemonServiceProtocol
     private var currentOffset = 0

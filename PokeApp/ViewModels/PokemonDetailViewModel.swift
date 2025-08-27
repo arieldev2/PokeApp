@@ -8,10 +8,11 @@
 import SwiftUI
 
 @MainActor
-class PokemonDetailViewModel: ObservableObject {
-    @Published var pokemon: Pokemon?
-    @Published var isLoading = false
-    @Published var error: PokemonError?
+@Observable
+final class PokemonDetailViewModel {
+    var pokemon: Pokemon?
+    var isLoading = false
+    var error: PokemonError?
     
     private let pokemonService: PokemonServiceProtocol
     
