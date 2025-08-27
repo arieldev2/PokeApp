@@ -15,7 +15,7 @@ class PokemonDetailViewModel: ObservableObject {
     
     private let pokemonService: PokemonServiceProtocol
     
-    init(pokemonService: PokemonServiceProtocol = PokemonService()) {
+    init(pokemonService: PokemonServiceProtocol = PokemonService.shared) {
         self.pokemonService = pokemonService
     }
     

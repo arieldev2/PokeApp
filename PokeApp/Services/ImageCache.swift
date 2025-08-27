@@ -13,7 +13,7 @@ protocol ImageCacheProtocol {
 }
 
 
-class ImageCache: ImageCacheProtocol {
+final class ImageCache: ImageCacheProtocol {
     private var cache = NSCache<NSString, UIImage>()
     
     func image(for url: String) async throws -> UIImage? {

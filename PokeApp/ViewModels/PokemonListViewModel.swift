@@ -26,7 +26,7 @@ class PokemonListViewModel: ObservableObject {
         }
     }
     
-    init(pokemonService: PokemonServiceProtocol = PokemonService()) {
+    init(pokemonService: PokemonServiceProtocol = PokemonService.shared) {
         self.pokemonService = pokemonService
     }
     

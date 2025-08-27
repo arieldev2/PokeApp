@@ -16,9 +16,13 @@ protocol PokemonServiceProtocol {
 
 
 // MARK: - Services
-class PokemonService: PokemonServiceProtocol {
+final class PokemonService: PokemonServiceProtocol {
     private let baseURL = "https://pokeapi.co/api/v2"
     private let session = URLSession.shared
+    
+    static let shared = PokemonService()
+    
+    private init(){}
     
     func fetchPokemonList(limit: Int = 20, offset: Int = 0) async throws -> PokemonListResponse {
         let url = URL(string: "\(baseURL)/pokemon?limit=\(limit)&offset=\(offset)")!
