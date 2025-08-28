@@ -20,6 +20,24 @@ struct ImageCacheTests{
         #expect(imageResponse != nil)
     }
     
+    @Test("Return cached image")
+    func imageCacheServiceCachedImage() async throws {
+        let mockService = MockImageCache()
+        mockService.returnCachedimage = true
+        
+        let imageResponse = try await mockService.image(for: "gear")
+        #expect(imageResponse != nil)
+    }
+    
+    @Test("Return server image")
+    func imageCacheServiceServerImage() async throws {
+        let mockService = MockImageCache()
+        mockService.returnServerImage = true
+        
+        let imageResponse = try await mockService.image(for: "doc")
+        #expect(imageResponse != nil)
+    }
+    
     @Test("Error Handling")
     func errorHandling() async throws {
         let mockService = MockImageCache()
