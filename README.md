@@ -60,7 +60,7 @@ PokemonDetailView      // Detailed Pokémon information
 - **Async/Await** - Native asynchronous programming
 - **Swift Testing** - Modern testing framework
 - **Property Wrappers** - `@State`
-- ** Observation Framework**  - `@Observable` macro for reactive state management
+- **Observation Framework**  - `@Observable` macro for reactive state management
 - **Protocol-Oriented Design** - Dependency injection and testability
 
 ### Performance Optimizations
