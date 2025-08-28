@@ -9,30 +9,32 @@ import SwiftUI
 
 struct PokemonDetailContentView: View {
     let pokemon: Pokemon
+    @State private var image: UIImage?
+    private let imageCache = ImageCache.shared
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             // Pokémon Image
             HStack {
                 Spacer()
-                AsyncImage(url: URL(string: pokemon.sprites.other?.officialArtwork?.frontDefault ?? pokemon.sprites.frontDefault ?? "")) { image in
-                    image
+                if let image{
+                    Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                } placeholder: {
-                    Rectangle()
-                        .fill(Color.gray.opacity(0.3))
+                        .frame(width: 200, height: 200)
+                        .background(
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.blue.opacity(0.1), Color.purple.opacity(0.1)]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .shadow(radius: 10)
+                }else{
+                    DetailImagePlaceholderView()
                 }
-                .frame(width: 200, height: 200)
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [Color.blue.opacity(0.1), Color.purple.opacity(0.1)]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .shadow(radius: 10)
+                
                 Spacer()
             }
             
@@ -99,6 +101,12 @@ struct PokemonDetailContentView: View {
             .padding()
             .background(Color(.systemGray6))
             .clipShape(RoundedRectangle(cornerRadius: 12))
+        }
+        .onAppear{
+            Task{
+                let urlImge = pokemon.sprites.other?.officialArtwork?.frontDefault ?? pokemon.sprites.frontDefault ?? ""
+                image = try await imageCache.image(for: urlImge)
+            }
         }
     }
 }

@@ -10,6 +10,8 @@ import SwiftUI
 struct PokemonListView: View {
     @State private var viewModel = PokemonListViewModel()
     
+    private let imageCache = ImageCache.shared
+    
     var body: some View {
         NavigationStack {
             VStack {

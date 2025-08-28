@@ -9,12 +9,19 @@ import SwiftUI
 
 protocol ImageCacheProtocol {
     func image(for url: String) async throws -> UIImage?
-    func setImage(_ image: UIImage, for url: String)
 }
 
 
 final class ImageCache: ImageCacheProtocol {
+    
     private var cache = NSCache<NSString, UIImage>()
+    
+    static let shared = ImageCache()
+    
+    private init(){
+        cache.countLimit = 100
+        cache.totalCostLimit = 50 * 1024 * 1024
+    }
     
     func image(for url: String) async throws -> UIImage? {
         if let cachedImage = cache.object(forKey: url as NSString) {
@@ -35,7 +42,5 @@ final class ImageCache: ImageCacheProtocol {
         return nil
     }
     
-    func setImage(_ image: UIImage, for url: String) {
-        cache.setObject(image, forKey: url as NSString)
-    }
+ 
 }

@@ -9,20 +9,21 @@ import SwiftUI
 
 struct PokemonListRowView: View {
     let pokemon: PokemonBasic
+    @State private var image: UIImage?
+    private let imageCache = ImageCache.shared
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemonId).png")) { image in
-                image
+            if let image{
+                Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-            } placeholder: {
-                Rectangle()
-                    .fill(Color.gray.opacity(0.3))
+                    .frame(width: 60, height: 60)
+                    .background(Color.gray.opacity(0.1))
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            }else{
+                SmallPlaceholderView()
             }
-            .frame(width: 60, height: 60)
-            .background(Color.gray.opacity(0.1))
-            .clipShape(RoundedRectangle(cornerRadius: 8))
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(pokemon.name.capitalized)
@@ -37,6 +38,11 @@ struct PokemonListRowView: View {
             Spacer()
         }
         .padding(.vertical, 4)
+        .onAppear{
+            Task{
+                image = try await imageCache.image(for: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemonId).png")
+            }
+        }
     }
     
     private var pokemonId: Int {
