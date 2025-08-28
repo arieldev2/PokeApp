@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		5B3A7D222E5FCAC60014321F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B3A7CDC2E5FB9780014321F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B3A7CE32E5FB9780014321F;
+			remoteInfo = PokeApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5B3A7CE42E5FB9780014321F /* PokeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3A7D1E2E5FCAC60014321F /* PokeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = PokeApp;
 			sourceTree = "<group>";
 		};
+		5B3A7D1F2E5FCAC60014321F /* PokeAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PokeAppTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5B3A7CE12E5FB9780014321F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B3A7D1B2E5FCAC60014321F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3A7CE62E5FB9780014321F /* PokeApp */,
+				5B3A7D1F2E5FCAC60014321F /* PokeAppTests */,
 				5B3A7CE52E5FB9780014321F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3A7CE42E5FB9780014321F /* PokeApp.app */,
+				5B3A7D1E2E5FCAC60014321F /* PokeAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = 5B3A7CE42E5FB9780014321F /* PokeApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5B3A7D1D2E5FCAC60014321F /* PokeAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B3A7D242E5FCAC60014321F /* Build configuration list for PBXNativeTarget "PokeAppTests" */;
+			buildPhases = (
+				5B3A7D1A2E5FCAC60014321F /* Sources */,
+				5B3A7D1B2E5FCAC60014321F /* Frameworks */,
+				5B3A7D1C2E5FCAC60014321F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B3A7D232E5FCAC60014321F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5B3A7D1F2E5FCAC60014321F /* PokeAppTests */,
+			);
+			name = PokeAppTests;
+			packageProductDependencies = (
+			);
+			productName = PokeAppTests;
+			productReference = 5B3A7D1E2E5FCAC60014321F /* PokeAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					5B3A7CE32E5FB9780014321F = {
 						CreatedOnToolsVersion = 16.4;
+					};
+					5B3A7D1D2E5FCAC60014321F = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 5B3A7CE32E5FB9780014321F;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				5B3A7CE32E5FB9780014321F /* PokeApp */,
+				5B3A7D1D2E5FCAC60014321F /* PokeAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5B3A7CE22E5FB9780014321F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B3A7D1C2E5FCAC60014321F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B3A7D1A2E5FCAC60014321F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B3A7D232E5FCAC60014321F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B3A7CE32E5FB9780014321F /* PokeApp */;
+			targetProxy = 5B3A7D222E5FCAC60014321F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5B3A7CED2E5FB9790014321F /* Debug */ = {
@@ -310,6 +385,42 @@
 			};
 			name = Release;
 		};
+		5B3A7D252E5FCAC60014321F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QP85979J3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PokeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PokeApp";
+			};
+			name = Debug;
+		};
+		5B3A7D262E5FCAC60014321F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QP85979J3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PokeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PokeApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -327,6 +438,15 @@
 			buildConfigurations = (
 				5B3A7CF02E5FB9790014321F /* Debug */,
 				5B3A7CF12E5FB9790014321F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B3A7D242E5FCAC60014321F /* Build configuration list for PBXNativeTarget "PokeAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B3A7D252E5FCAC60014321F /* Debug */,
+				5B3A7D262E5FCAC60014321F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
